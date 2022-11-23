@@ -6,7 +6,9 @@
 
     <!-- CSS -->
     <style type="text/css">
-      
+      :root {
+        --title_01:'変更したいユーザー名';
+      }
 
       body {
         text-align: center;
@@ -26,38 +28,55 @@
       #title_01:before{ content: var(--title_01); }
     </style>
 
+    <script type="text/javascript">
+      // 数値計算
+      function CalculationNumber(number_area_id, addnumber) {
+
+        var element = document.getElementById(number_area_id);
+        element.value = parseInt(element.value) + parseInt(addnumber);
+      }
+
+      // 数値リセット
+      function ResetNumber(number_area_id) {
+        document.getElementById(number_area_id).value = 0;
+      }
+    </script>
+
   </head>
   <body>
     <table>
       <tr>
-        <th><div id = "title_01">ユーザー1</div></th>
+        <th><div id = "title_01"></div></th>
       </tr>
       <tr>
-        <td><input type="text" class = "number_area" value="" readonly></td>
+        <td><input type="text" class = "number_area" id = "number_01" value="0" readonly></td>
       </tr>
       <tr>
         <td>点数を増やす</td>
       </tr>
       <tr>
-        <td><button type="button">+100</button></td>
+        <td><button type="button" onclick="CalculationNumber('number_01', 100)">+100</button></td>
       </tr>
       <tr>
-        <td><button type="button">+10</button></td>
+        <td><button type="button" onclick="CalculationNumber('number_01', 10)">+10</button></td>
       </tr>
       <tr>
-        <td><button type="button">+1</button></td>
+        <td><button type="button" onclick="CalculationNumber('number_01', 1)">+1</button></td>
       </tr>
       <tr>
         <td>点数を減らす</td>
       </tr>
       <tr>
-        <td><button type="button">-100</button></td>
+        <td><button type="button" onclick="CalculationNumber('number_01', -100)">-100</button></td>
       </tr>
       <tr>
-        <td><button type="button">-10</button></td>
+        <td><button type="button" onclick="CalculationNumber('number_01', -10)">-10</button></td>
       </tr>
       <tr>
-        <td><button type="button">-1</button></td>
+        <td><button type="button" onclick="CalculationNumber('number_01', -1)">-1</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" onclick="ResetNumber('number_01')">リセット</button></td>
       </tr>
     </table>
 
