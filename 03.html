@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 文字コード変更 -->
+    <meta charset="UTF-8">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <!-- CSS -->
+    <style type="text/css">
+      h1 {
+        font-size: var(--font_size);
+        color: var(--font_color);
+        text-align: center;
+        background-color: var(--background);
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+		<script>
+			$(function(){
+				setInterval(function(){
+					var count = window.localStorage.getItem('count_03');
+					$('h1').text(count);
+				},1000);
+			});
+		</script>
+  </body>
+</html>

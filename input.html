@@ -9,6 +9,12 @@
 
     <!-- CSS -->
     <style type="text/css">
+
+      :root {
+      --user_01:"変更したい名称";
+      --user_02:"変更したい名称";
+      }
+
       body {
         text-align: center;
       }
@@ -37,6 +43,10 @@
       }
 
       #user_01:before{ content: var(--user_01); }
+      #user_02:before{ content: var(--user_01); }
+      #user_03:before{ content: var(--user_01); }
+      #user_04:before{ content: var(--user_01); }
+      #user_05:before{ content: var(--user_01); }
     </style>
 
   </head>
@@ -44,9 +54,17 @@
     <table>
       <tr>
         <th><div id = "user_01"></div></th>
+        <th><div id = "user_02"></div></th>
+        <th><div id = "user_03"></div></th>
+        <th><div id = "user_04"></div></th>
+        <th><div id = "user_05"></div></th>
       </tr>
       <tr>
         <td><input type="text" class = "number_area number_area_01" value="0" readonly></td>
+        <td><input type="text" class = "number_area number_area_02" value="0" readonly></td>
+        <td><input type="text" class = "number_area number_area_03" value="0" readonly></td>
+        <td><input type="text" class = "number_area number_area_04" value="0" readonly></td>
+        <td><input type="text" class = "number_area number_area_05" value="0" readonly></td>
       </tr>
       <tr>
         <td class = "borders">
@@ -59,6 +77,54 @@
           </div>
           <div>
             <button type="button" class="calc_01" value="1">+1</button>
+          </div>
+        </td>
+        <td class = "borders">
+          <div>増加</div>
+          <div>
+            <button type="button" class="calc_02" value="100">+100</button>
+          </div>
+          <div>
+            <button type="button" class="calc_02" value="10">+10</button>
+          </div>
+          <div>
+            <button type="button" class="calc_02" value="1">+1</button>
+          </div>
+        </td>
+        <td class = "borders">
+          <div>増加</div>
+          <div>
+            <button type="button" class="calc_03" value="100">+100</button>
+          </div>
+          <div>
+            <button type="button" class="calc_03" value="10">+10</button>
+          </div>
+          <div>
+            <button type="button" class="calc_03" value="1">+1</button>
+          </div>
+        </td>
+        <td class = "borders">
+          <div>増加</div>
+          <div>
+            <button type="button" class="calc_04" value="100">+100</button>
+          </div>
+          <div>
+            <button type="button" class="calc_04" value="10">+10</button>
+          </div>
+          <div>
+            <button type="button" class="calc_04" value="1">+1</button>
+          </div>
+        </td>
+        <td class = "borders">
+          <div>増加</div>
+          <div>
+            <button type="button" class="calc_05" value="100">+100</button>
+          </div>
+          <div>
+            <button type="button" class="calc_05" value="10">+10</button>
+          </div>
+          <div>
+            <button type="button" class="calc_05" value="1">+1</button>
           </div>
         </td>
       </tr>
@@ -75,9 +141,61 @@
             <button type="button" class="calc_01" value="-1">-1</button>
           </div>
         </td>
+        <td class = "borders">
+          <div>減少</div>
+          <div>
+            <button type="button" class="calc_02" value="-100">-100</button>
+          </div>
+          <div>
+            <button type="button" class="calc_02" value="-10">-10</button>
+          </div>
+          <div>
+            <button type="button" class="calc_02" value="-1">-1</button>
+          </div>
+        </td>
+        <td class = "borders">
+          <div>減少</div>
+          <div>
+            <button type="button" class="calc_03" value="-100">-100</button>
+          </div>
+          <div>
+            <button type="button" class="calc_03" value="-10">-10</button>
+          </div>
+          <div>
+            <button type="button" class="calc_03" value="-1">-1</button>
+          </div>
+        </td>
+        <td class = "borders">
+          <div>減少</div>
+          <div>
+            <button type="button" class="calc_04" value="-100">-100</button>
+          </div>
+          <div>
+            <button type="button" class="calc_04" value="-10">-10</button>
+          </div>
+          <div>
+            <button type="button" class="calc_04" value="-1">-1</button>
+          </div>
+        </td>
+        <td class = "borders">
+          <div>減少</div>
+          <div>
+            <button type="button" class="calc_05" value="-100">-100</button>
+          </div>
+          <div>
+            <button type="button" class="calc_05" value="-10">-10</button>
+          </div>
+          <div>
+            <button type="button" class="calc_05" value="-1">-1</button>
+          </div>
+        </td>
       </tr>
       <tr>
         <td><button type="button" class="reset_01">リセット</button></td>
+        <td><button type="button" class="reset_02">リセット</button></td>
+        <td><button type="button" class="reset_03">リセット</button></td>
+        <td><button type="button" class="reset_04">リセット</button></td>
+        <td><button type="button" class="reset_05">リセット</button></td>
       </tr>
     </table>
 
@@ -86,8 +204,16 @@
     <script type="text/javascript">
     // 初期化
     var count_01 = 0;
+    var count_02 = 0;
+    var count_03 = 0;
+    var count_04 = 0;
+    var count_05 = 0;
 
     window.localStorage.setItem('count_01',count_01);
+    window.localStorage.setItem('count_02',count_02);
+    window.localStorage.setItem('count_03',count_03);
+    window.localStorage.setItem('count_04',count_04);
+    window.localStorage.setItem('count_05',count_05);
 
     // 加算・減算
     $(".calc_01").click(function(){
@@ -96,11 +222,59 @@
 			window.localStorage.setItem('count_01',count_01);
 		});
 
+    $(".calc_02").click(function(){
+      count_02 = count_02 + parseInt($(this).val());
+			$(".number_area_02").val(count_02);
+			window.localStorage.setItem('count_02',count_02);
+		});
+
+    $(".calc_03").click(function(){
+      count_03 = count_03 + parseInt($(this).val());
+			$(".number_area_03").val(count_03);
+			window.localStorage.setItem('count_03',count_03);
+		});
+
+    $(".calc_04").click(function(){
+      count_04 = count_04 + parseInt($(this).val());
+			$(".number_area_04").val(count_04);
+			window.localStorage.setItem('count_04',count_04);
+		});
+
+    $(".calc_05").click(function(){
+      count_05 = count_05 + parseInt($(this).val());
+			$(".number_area_05").val(count_05);
+			window.localStorage.setItem('count_05',count_05);
+		});
+
     // リセット
     $(".reset_01").click(function(){
       count_01 = 0;
       $(".number_area_01").val(count_01);
       window.localStorage.setItem('count_01',count_01);
+		});
+
+    $(".reset_02").click(function(){
+      count_02 = 0;
+      $(".number_area_02").val(count_02);
+      window.localStorage.setItem('count_02',count_02);
+		});
+
+    $(".reset_03").click(function(){
+      count_03 = 0;
+      $(".number_area_03").val(count_03);
+      window.localStorage.setItem('count_03',count_03);
+		});
+
+    $(".reset_04").click(function(){
+      count_04 = 0;
+      $(".number_area_04").val(count_04);
+      window.localStorage.setItem('count_04',count_04);
+		});
+
+    $(".reset_05").click(function(){
+      count_05 = 0;
+      $(".number_area_05").val(count_05);
+      window.localStorage.setItem('count_05',count_05);
 		});
     </script>
   </body>
