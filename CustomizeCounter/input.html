@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 文字コード変更 -->
+    <meta charset="UTF-8">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <!-- CSS -->
+    <style type="text/css">
+    </style>
+
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td class = "borders">
+          <div>
+            <button type="button" class="calc" value="100">+100</button>
+          </div>
+          <div>
+            <button type="button" class="calc" value="10">+10</button>
+          </div>
+          <div>
+            <button type="button" class="calc" value="1">+1</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class = "borders">
+          <div>
+            <button type="button" class="calc" value="-100">-100</button>
+          </div>
+          <div>
+            <button type="button" class="calc" value="-10">-10</button>
+          </div>
+          <div>
+            <button type="button" class="calc" value="-1">-1</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="text" class = "count_area" value="0"></td>
+      </tr>
+      <tr>
+        <td><button type="button" class="reset">リセット</button></td>
+      </tr>
+    </table>
+
+
+
+    <script type="text/javascript">
+    // 初期化
+    var count = 0;
+
+    window.localStorage.setItem('counter',count);
+
+    // 加算・減算
+    $(".calc").click(function(){
+      count = count + parseInt($(this).val());
+			$(".count_area").val(count);
+			window.localStorage.setItem('counter',count);
+		});
+
+    // リセット
+    $(".reset").click(function(){
+      count = 0;
+      $(".count_area").val(count);
+      window.localStorage.setItem('counter',count);
+		});
+
+    // テキストボックスのフォーカスが外れたら
+    $(".count_area").blur(function(){
+      count = parseInt($(this).val());
+      $(".count_area").val(count);
+      window.localStorage.setItem('counter',count);
+		});
+    </script>
+  </body>
+</html>
