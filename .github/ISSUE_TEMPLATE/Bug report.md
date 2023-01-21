@@ -1,3 +1,9 @@
+---
+name: Bug report
+about: Create a report to help us improve
+
+---
+
 ## Describe the bug(バグについての説明)
 バグの内容を明確かつ簡潔に説明すること。
 
