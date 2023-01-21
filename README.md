@@ -18,7 +18,7 @@
 <div align="center">
   
   <!-- repo info -->
-  [![License]](/LICENSE) [![Releases]](https://github.com/Ohno-Tk/OBS_Counter/releases) ![Downloads] ![Stars]
+  [![License]](/.github/LICENSE) [![Releases]](https://github.com/Ohno-Tk/OBS_Counter/releases) ![Downloads] ![Stars]
 
   <!-- repo info -->
   ![HTML-image] ![CSS-image] ![JavaScript-image] ![jQuery-image] ![VSCode-image]  
@@ -32,6 +32,7 @@
 - Developer(開発者向け)
   - [Release Notes (リリースノート)](#release-notes)
   - [Coding Rule (コーディング規約)](#coding-rule)
+  - [Development Process (開発プロセス)](/.github/CONTRIBUTING.md)
 - [License(ライセンス)](#license)
 
 ## Screenshot
