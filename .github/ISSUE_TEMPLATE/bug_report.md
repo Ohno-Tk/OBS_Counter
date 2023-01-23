@@ -1,6 +1,8 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: エラーや問題について報告する。
+title: "[Bug]: "
+labels: ["🐛bug"]
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-
+about: リクエストや提案をする。
+title: "[Feature Request]: "
+labels: ["✨enhancement"]
 ---
 
 ## 概要
