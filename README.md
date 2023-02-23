@@ -42,7 +42,7 @@
 ## Screenshot
 obsで表示できるカウンター
 <div align="center">
-  <img width="200" src="https://user-images.githubusercontent.com/51406176/205279268-d6e41e41-4da4-454a-9789-98c912cc2620.jpg">
+  <img width="500" src="https://user-images.githubusercontent.com/51406176/220805286-9b8532f0-caea-4d68-bcaf-a7772cea8dd5.jpg">
 </div>
 
 ## Features
