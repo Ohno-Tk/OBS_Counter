@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 文字コード変更 -->
+    <meta charset="UTF-8">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <!-- Noto Sans JP (japanese) フォント -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+
+    <!-- CSS -->
+    <style type="text/css">
+
+      body {
+        background-color: #000000;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: #FFFFFF;
+      }
+      button {
+        background-color: #808080;
+        border-radius: 10px;
+        color: #FFFFFF;
+        font-size: 3em;
+        height: 60px;
+        width:50px;
+      }
+      /* 数値の入力欄にスピナーを常時表示する */
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        opacity: 1;
+      }
+      .number_area {
+        background-color: #000000;
+        border:1px solid #FCFCFC;
+        border-radius: 10px;
+        color: #FFFFFF;
+        font-size: 3em;
+        height: 1em;
+        text-align: center;
+        width:3em;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>数字だけのカウンター</h1>
+    <button type="button" class="minus">-</button>
+    <input type="text" class="number_area now_count" id="now_count_area" value="0">
+    <button type="button" class="plus">+</button>
+
+    <h1>詳細設定</h1>
+    <h2>増減幅</h2>
+    <input type="number" class="number_area count_num" value="1" min="0" step="1">ずつ増減する
+    
+    <br>
+
+    <h2>メインカラー</h2>
+    <input type="text" id="main_color" value="#FFFFFF">
+
+
+
+    <script type="text/javascript">
+    // 初期化
+    var counter = 0; // カウンタ
+    var main_color = "#FFFFFF"; // メインカラー
+
+    // Local Storageの初期化
+    // カウンタ
+    window.localStorage.setItem('counter01', counter);
+    // 色
+    window.localStorage.setItem('main_color', main_color);
+
+    // 加算処理
+    $(".plus").click(function(){
+      counter = counter + parseInt($('.count_num').val());
+			$(".now_count").val(counter);
+			window.localStorage.setItem('counter01', counter);
+		});
+
+   // 減算処理
+   $(".minus").click(function(){
+    counter = counter - parseInt($('.count_num').val());
+			$(".now_count").val(counter);
+			window.localStorage.setItem('counter01', counter);
+		});
+
+   // テキストエリアに入力された場合
+   $("#now_count_area").keyup(function () {
+    counter = parseInt($(this).val());
+			$(".now_count").val(counter);
+			window.localStorage.setItem('counter01', counter);
+   });
+
+   // カラーパレットが変更された場合
+   $("#main_color").keyup(function () {
+    main_color = $(this).val();
+			window.localStorage.setItem('main_color', main_color);
+   });
+    </script>
+  </body>
+</html>
