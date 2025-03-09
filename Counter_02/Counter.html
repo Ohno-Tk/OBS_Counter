@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 文字コード変更 -->
+    <meta charset="UTF-8">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <!-- Noto Sans JP (japanese) フォント -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+
+    <!-- CSS -->
+    <style type="text/css">
+      body {
+        background-color: #000000;
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+
+      .field {
+        border: 5px solid;
+        border-radius: 100px;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 100px;
+      }
+
+      .title {
+        font-size: 80px;
+        padding: 100px;
+      }
+
+      .unit {
+        font-size: 50px;
+        padding: 100px;        
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="field">
+      <span class="title"></span>
+      <span class="counter"></span>
+      <span class="unit"></span>
+  </div>
+
+
+		<script>
+      // カウント変更処理
+			$(function(){
+				setInterval(function(){
+					var count = window.localStorage.getItem('counter02');
+					$('.counter').text(count);
+				},1000);
+			});
+
+      // タイトル変更処理
+			$(function(){
+				setInterval(function(){
+					var title = window.localStorage.getItem('title');
+					$('.title').text(title);
+				},1000);
+			});
+
+      // 単位変更処理
+			$(function(){
+				setInterval(function(){
+					var unit = window.localStorage.getItem('unit');
+					$('.unit').text(unit);
+				},1000);
+			});
+
+      // メインカラー(テキスト)変更処理
+			$(function(){
+				setInterval(function(){
+					var color = window.localStorage.getItem('main_color_text');
+					$('body').css("color", color);
+				},1000);
+			});
+
+      // メインカラー(背景)変更処理
+			$(function(){
+				setInterval(function(){
+					var color = window.localStorage.getItem('main_color_backgroundcolor');
+					$('.field').css("background-color", color);
+				},1000);
+			});
+
+      // メインカラー(アウトライン)変更処理
+			$(function(){
+				setInterval(function(){
+					var color = window.localStorage.getItem('main_color_outline');
+					$('.field').css("border-color", color);
+				},1000);
+			});
+		</script>
+  </body>
+</html>
